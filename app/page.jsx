@@ -20,12 +20,6 @@ const services = [
   },
 ];
 
-const steps = [
-  ["01", "Förstå", "Vi lär känna ert sammanhang, era användare och vad som faktiskt skapar värde."],
-  ["02", "Förenkla", "Vi hittar den tydligaste vägen framåt och gör väl avvägda teknikval tillsammans."],
-  ["03", "Förverkliga", "Vi bygger, förbättrar och lämnar efter oss ett system som teamet kan äga med trygghet."],
-];
-
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -42,7 +36,7 @@ export default function Home() {
       <header id="top" className={scrolled ? "scrolled" : ""}>
         <div className="wrap nav">
           <a href="#top" className="brand" onClick={() => setMenuOpen(false)}>
-            <span className="mark">R</span>Rilo Solutions
+            <img className="brand-logo" src="/rilo-logo.jpg" alt="Rilo Solutions logotyp" />Rilo Solutions
           </a>
           <nav className={menuOpen ? "links open" : "links"}>
             <a href="#tjanster" onClick={() => setMenuOpen(false)}>Tjänster</a>
@@ -68,14 +62,19 @@ export default function Home() {
               </div>
               <div className="signal"><span className="pulse" />Tillgängliga för nya uppdrag</div>
             </div>
-            <div className="architecture" aria-label="Illustration av sammanlänkade system">
-              <span className="code-label">System / connected</span><span className="orbit" /><span className="orbit two" /><span className="axis" />
-              <span className="node main">RILO<br />CORE</span><span className="node small n1">CLOUD</span><span className="node small n2">DATA</span><span className="node small n3">API</span><span className="node n4">UX</span><span className="code-label bottom">01—04</span>
+            <div className="wheel-illustration" aria-label="Fyra tekniska byggblock: databas, C#, Angular och moln">
+              <div className="wheel-center"><span>R</span></div>
+              <div className="wheel-node node-db">
+                <span className="database-glyph"><i /><i /><i /></span>
+              </div>
+              <div className="wheel-node node-csharp">C#</div>
+              <div className="wheel-node node-angular"><span className="angular-glyph">A</span></div>
+              <div className="wheel-node node-cloud"><span className="cloud-glyph"><i /><i /><i /></span></div>
             </div>
           </div>
         </section>
 
-        <section className="trust"><div className="wrap trust-inner"><p>Vi bygger med teknik som håller</p><div className="stack"><span>.NET</span><span>Azure</span><span>React</span><span>TypeScript</span><span>Cloud native</span></div></div></section>
+        <section className="trust"><div className="wrap trust-inner"><p>Vi bygger med teknik som håller</p><div className="stack"><span>.NET</span><span>Azure</span><span>React</span><span>Angular</span><span>TypeScript</span></div></div></section>
 
         <section className="services" id="tjanster">
           <div className="wrap">
@@ -84,14 +83,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="approach" id="arbetssatt">
-          <div className="wrap">
-            <div className="section-head"><div><div className="eyebrow">Vårt arbetssätt</div><h2>Från komplexitet till klarhet.</h2></div><p>Vi tror på transparens, korta återkopplingsvägar och tekniska lösningar som är lätta att förstå — även om de löser svåra problem.</p></div>
-            <div className="steps">{steps.map(([number, title, text]) => <div className="step" key={number}><span className="step-num">{number}</span><h3>{title}</h3><p>{text}</p><span>↘</span></div>)}</div>
-          </div>
-        </section>
-
-        <section className="contact" id="kontakt"><div className="wrap contact-grid"><div><div className="eyebrow">Kontakta oss</div><h2>Har ni en utmaning vi kan lösa tillsammans?</h2></div><div><p>Berätta kort om var ni står. Vi återkommer gärna för ett första, förutsättningslöst samtal.</p><a href="mailto:hej@rilosolutions.se" className="button">hej@rilosolutions.se <span className="arrow">→</span></a></div></div></section>
+        <section className="contact" id="kontakt"><div className="wrap contact-grid"><div><div className="eyebrow">Kontakta oss</div><h2>Har ni en utmaning vi kan lösa tillsammans?</h2></div><div><p>Berätta kort om var ni står. Vi återkommer gärna för ett första, förutsättningslöst samtal.</p><a href="mailto:rilosolutions@gmail.com" className="button">hej@rilosolutions.se <span className="arrow">→</span></a></div></div></section>
       </main>
 
       <footer><div className="wrap footer-inner"><div className="footer-brand">Rilo Solutions</div><div>Systemutveckling &amp; arkitektur · Sverige</div><div>© {new Date().getFullYear()} Rilo Solutions</div></div></footer>
